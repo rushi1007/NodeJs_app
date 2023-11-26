@@ -1,0 +1,88 @@
+<!-- alldata.hbs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invoice Data</title>
+      <link rel='stylesheet' href='public/stylesheets/style.css' />
+
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+     }
+
+
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sales Data</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Invoice ID</th>
+        <th>Branch</th>
+        <th>City</th>
+        <th>Customer Type</th>
+        <th>Product Line</th>
+        <th>Product Name</th>
+        <th>Image</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Tax (5%)</th>
+        <th>Total</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Payment</th>
+        <th>COGS</th>
+        <th>Gross Income</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+     <tbody>
+    {{#each invoices}}
+        <tr>
+            <td>{{space_fn this "Invoice ID" }}</td> 
+            <td>{{this.Branch}}</td>
+            <td>{{this.City}}</td>
+            <td>{{space_fn this "Customer type" }}</td> 
+            <td>{{space_fn this "Product line" }}</td> 
+            <td>{{this.name}}</td>
+            <td><img src="{{this.image}}" alt="Product Image" width="100"></td>
+            <td>{{space_fn this "Unit price" }}</td> 
+            <td>{{this.Quantity}}</td>
+            <td>{{space_fn this "Tax 5%" }}</td> 
+            <td>{{this.Total}}</td>
+            <td>{{this.Date}}</td>
+            <td>{{this.Time}}</td>
+            <td>{{this.Payment}}</td>
+            <td>{{this.cogs}}</td>
+            <td>{{space_fn this "gross income" }}</td> 
+            <td>{{this.Rating}}</td>
+        </tr>
+    {{/each}}
+</tbody>
+  </table>
+</body>
+</html>
