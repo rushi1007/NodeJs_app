@@ -1,4 +1,4 @@
 module.exports = {
-    url : "mongodb://127.0.0.1:27017/Asn_4_Rushi",
+    url : "mongodb+srv://rushipatel100720:admin%40123@cluster0.keduksp.mongodb.net/Asn_4_Rushi",
 
 };
